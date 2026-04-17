@@ -1,0 +1,360 @@
+.chart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.chart-modal {
+  background-color: #282c34;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chart-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.chart-modal-title h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: white;
+}
+
+.chart-modal-title p {
+  margin: 8px 0 0;
+  color: #9274ca;
+  font-size: 1.1rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #9274ca;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.chart-modal-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.price-display {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.price-display.positive {
+  color: #28a745;
+}
+
+.price-display.negative {
+  color: #dc3545;
+}
+
+.change-indicator {
+  font-size: 1.1rem;
+  display: block;
+  margin-top: 5px;
+}
+
+.add-watchlist-button {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.add-watchlist-button:hover {
+  background-color: #6d28d9;
+}
+
+.remove-watchlist-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.remove-watchlist-button:hover {
+  background-color: #b91c1c;
+}
+
+.chart-modal-chart {
+  height: 300px;
+  margin-bottom: 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.chart-modal-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.stat-label {
+  display: block;
+  color: #9274ca;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  display: block;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.chart-modal-prediction {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.chart-modal-prediction h3 {
+  color: #9274ca;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.chart-modal-prediction p {
+  margin: 0;
+  line-height: 1.5;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chart-modal-prediction p.positive {
+  color: #28a745;
+  border-left: 4px solid #28a745;
+}
+
+.chart-modal-prediction p.negative {
+  color: #dc3545;
+  border-left: 4px solid #dc3545;
+}
+
+.prediction-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.show-prediction-button {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.25);
+}
+
+.show-prediction-button:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(99, 102, 241, 0.3);
+}
+
+.stats-placeholder {
+  grid-column: 1 / -1;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  color: #9274ca;
+}
+
+.loading-stats {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.prediction-loading {
+  text-align: center;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.prediction-loading p {
+  color: #9274ca;
+  margin-bottom: 16px;
+  background: none;
+  padding: 0;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(146, 116, 202, 0.3);
+  border-radius: 50%;
+  border-top-color: #9274ca;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.prediction-error {
+  color: #dc3545 !important;
+  border-left: 4px solid #dc3545;
+}
+
+.chart-modal-news {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chart-modal-news h3 {
+  color: #9274ca;
+  margin: 0 0 16px 0;
+}
+
+.news-loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.news-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.news-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+  background: rgba(146, 116, 202, 0.5);
+  border-radius: 3px;
+}
+
+.news-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.news-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-content h4 {
+  margin: 0 0 8px 0;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.news-content p {
+  margin: 0 0 8px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-date {
+  display: block;
+  color: #9274ca;
+  font-size: 0.8rem;
+}
+
+.news-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-news {
+  text-align: center;
+  padding: 32px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+} 

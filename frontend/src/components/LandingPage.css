@@ -1,0 +1,144 @@
+.landing-page {
+  min-height: 100vh;
+  background-color: #282c34;
+  color: white;
+  padding: 40px 20px;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.landing-header h1 {
+  font-size: 3rem;
+  color: #9274ca;
+  margin-bottom: 10px;
+}
+
+.landing-header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.feature-card h3 {
+  color: #9274ca;
+  margin-bottom: 15px;
+}
+
+.cta-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cta-section h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.auth-button {
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.auth-button.login {
+  background-color: #9274ca;
+  color: white;
+}
+
+.auth-button.signup {
+  background-color: transparent;
+  border: 2px solid #9274ca;
+  color: #9274ca;
+}
+
+.auth-button:hover {
+  background-color: #7b5eb0;
+  color: white;
+}
+
+.popular-stocks-preview {
+  text-align: center;
+}
+
+.popular-stocks-preview h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.stocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stock-preview {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.stock-preview:hover {
+  transform: translateY(-5px);
+}
+
+.stock-preview h3 {
+  color: #9274ca;
+  margin-bottom: 10px;
+}
+
+.stock-preview p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.stock-price-preview {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.stock-price-preview.positive {
+  color: #28a745;
+}
+
+.stock-price-preview.negative {
+  color: #dc3545;
+}
+
+.stock-price-preview span {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 5px;
+} 
