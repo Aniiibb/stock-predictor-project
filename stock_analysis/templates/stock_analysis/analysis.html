@@ -1,0 +1,15 @@
+<h1>{{ stock.name }} ({{ stock.symbol }}) Analysis</h1>
+<h2>Prediction: {{ prediction }}</h2>
+
+<h3>Recent News:</h3>
+<ul>
+    {% for article in news_articles %}
+    <li>
+        <h4>{{ article.title }}</h4>
+        <p>{{ article.description }}</p>
+        <a href="{{ article.url }}" target="_blank">Read more</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- Add chart display here --> 
